@@ -1,6 +1,11 @@
 local M = {}
+local _config = {}
 
-M.setup = function()
+M.setup = function(config)
+	_config = config or {}
+end
+
+M.openWindow = function()
 	local plugins = require("lazy.core.config").plugins
 
 	if not plugins or next(plugins) == nil then
